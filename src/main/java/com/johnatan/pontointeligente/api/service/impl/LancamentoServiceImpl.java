@@ -7,11 +7,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
 
 import com.johnatan.pontointeligente.api.entities.Lancamento;
 import com.johnatan.pontointeligente.api.repositories.LancamentoRepository;
 import com.johnatan.pontointeligente.api.services.LancamentoService;
 
+@Service
 public class LancamentoServiceImpl implements LancamentoService {
 
 	private static final Logger log = LoggerFactory.getLogger(LancamentoServiceImpl.class);

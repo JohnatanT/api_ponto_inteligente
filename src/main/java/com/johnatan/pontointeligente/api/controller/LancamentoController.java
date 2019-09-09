@@ -51,8 +51,7 @@ public class LancamentoController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 	
-	@Value("${paginacao.qtd_por_pagina}")
-	private int qtdPorPagina;
+	private int qtdPorPagina = 2;
 
 	public LancamentoController() {
 	}
