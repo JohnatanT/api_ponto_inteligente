@@ -5,7 +5,7 @@ import java.util.Optional;
 import com.johnatan.pontointeligente.api.entities.Empresa;
 
 public interface EmpresaService {
-	Optional<Empresa> buscaPorCnpj(String cnpj);
+	Optional<Empresa> buscarPorCnpj(String cnpj);
 	
 	Empresa persistir(Empresa empresa);
 }

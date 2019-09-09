@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -79,15 +80,15 @@ public class CadastroPJController {
 	 * @param result
 	 */
 	private void validarDadosExistentes(CadastroPJDto cadastroPJDto, BindingResult result) {
-//		this.empresaService.buscarPorCnpj(cadastroPJDto.getCnpj())
-//				.ifPresent(emp -> result.addError(new ObjectError("empresa", "Empresa já existente.")));
-//
-//		this.funcionarioService.buscarPorCpf(cadastroPJDto.getCpf())
-//				.ifPresent(func -> result.addError(new ObjectError("funcionario", "CPF já existente.")));
-//
-//		this.funcionarioService.buscarPorEmail(cadastroPJDto.getEmail())
-//				.ifPresent(func -> result.addError(new ObjectError("funcionario", "Email já existente.")));
-//	
+		this.empresaService.buscarPorCnpj(cadastroPJDto.getCnpj())
+				.ifPresent(emp -> result.addError(new ObjectError("empresa", "Empresa já existente.")));
+
+		this.funcionarioService.buscarPorCpf(cadastroPJDto.getCpf())
+				.ifPresent(func -> result.addError(new ObjectError("funcionario", "CPF já existente.")));
+
+		this.funcionarioService.buscaPorEmail(cadastroPJDto.getEmail())
+				.ifPresent(func -> result.addError(new ObjectError("funcionario", "Email já existente.")));
+	
 		}
 
 	/**

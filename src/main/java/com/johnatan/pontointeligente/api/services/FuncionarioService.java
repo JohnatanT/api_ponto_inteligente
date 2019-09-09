@@ -7,7 +7,7 @@ import com.johnatan.pontointeligente.api.entities.Funcionario;
 public interface FuncionarioService {
 	Funcionario persistir(Funcionario funcionario);
 	
-	Optional<Funcionario> buscaPorCpf(String cpf);
+	Optional<Funcionario> buscarPorCpf(String cpf);
 	
 	Optional<Funcionario> buscaPorEmail(String email);
 	
