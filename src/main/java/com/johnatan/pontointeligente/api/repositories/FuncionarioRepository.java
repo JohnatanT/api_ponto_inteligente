@@ -11,7 +11,7 @@ import com.johnatan.pontointeligente.api.entities.Funcionario;
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 	
 	Funcionario findByCpf(String cpf);
-	Funcionario findByEmai(String email);
+	Funcionario findByEmail(String email);
 	Funcionario findByCpfOrEmail(String cpf, String email);
 		
 }
